@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="VORTEX GAMES — discover trending and popular games in a futuristic gaming hub."
+    />
+    <title>VORTEX GAMES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header" aria-label="Main site header">
+        <a class="brand" href="#top" aria-label="VORTEX GAMES home">
+          <span>VORTEX</span> GAMES
+        </a>
+
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a href="#games" class="nav-link active">All Games</a>
+          <a href="#games" class="nav-link">Top</a>
+          <a href="#games" class="nav-link">Trending</a>
+          <a href="#genre-filters" class="nav-link">Genres</a>
+        </nav>
+
+        <div class="header-tools">
+          <label class="search-box" aria-label="Search games">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16L21 21"></path>
+            </svg>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Search games"
+              aria-label="Search games"
+            />
+          </label>
+
+          <button
+            class="icon-button"
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle color theme"
+            aria-pressed="false"
+          >
+            ☼
+          </button>
+
+          <a class="user-avatar" href="#profile" aria-label="Open user profile">VG</a>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-content">
+            <p class="eyebrow">Featured release</p>
+            <h1 id="hero-title">Loading...</h1>
+
+            <div class="hero-meta" aria-label="Featured game metadata">
+              <span class="meta-pill meta-score" id="hero-score">0</span>
+              <span class="meta-pill" id="hero-platforms">PC</span>
+              <span class="meta-pill" id="hero-year">2025</span>
+            </div>
+
+            <p class="hero-description" id="hero-description">
+              Loading the most anticipated gaming experience...
+            </p>
+
+            <div class="hero-actions">
+              <button class="primary-button" id="hero-download-btn" type="button">
+                Download Now
+              </button>
+              <button class="secondary-button" id="hero-details-btn" type="button">
+                Details
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-controls" aria-label="Featured game slider controls">
+            <div class="slider-dots" id="hero-dots"></div>
+            <button class="carousel-arrow" id="hero-prev" type="button" aria-label="Previous featured game">
+              ←
+            </button>
+            <button class="carousel-arrow" id="hero-next" type="button" aria-label="Next featured game">
+              →
+            </button>
+          </div>
+        </section>
+
+        <section class="community-section" aria-label="Community links">
+          <a
+            class="community-card discord"
+            href="https://discord.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Join Discord community"
+          >
+            <span class="community-icon">D</span>
+            <span class="community-text">
+              <strong>Discord</strong>
+              <small>Join the squad</small>
+            </span>
+            <span class="community-arrow">↗</span>
+          </a>
+
+          <a
+            class="community-card reddit"
+            href="https://www.reddit.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Visit Reddit community"
+          >
+            <span class="community-icon">R</span>
+            <span class="community-text">
+              <strong>Reddit</strong>
+              <small>Talk strategy</small>
+            </span>
+            <span class="community-arrow">↗</span>
+          </a>
+
+          <a
+            class="community-card nebulo"
+            href="https://www.google.com/search?q=nebulo+gaming"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Explore Nebulo community"
+          >
+            <span class="community-icon">N</span>
+            <span class="community-text">
+              <strong>Nebulo</strong>
+              <small>Discover the unknown</small>
+            </span>
+            <span class="community-arrow">↗</span>
+          </a>
+
+          <a
+            class="community-card donations"
+            href="#support"
+            aria-label="Support VORTEX GAMES"
+          >
+            <span class="community-icon">♥</span>
+            <span class="community-text">
+              <strong>Donations</strong>
+              <small>Keep the lights on</small>
+            </span>
+            <span class="community-arrow">↗</span>
+          </a>
+        </section>
+
+        <section class="games-section" id="games" aria-labelledby="games-heading">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Current rotation</p>
+              <h2 id="games-heading">Trending Games</h2>
+            </div>
+            <a href="#games" class="view-all">View all →</a>
+          </div>
+
+          <div class="games-grid" id="games-container" aria-live="polite"></div>
+        </section>
+
+        <section class="genres-section" aria-labelledby="genres-heading">
+          <div class="section-heading section-heading-small">
+            <div>
+              <p class="section-kicker">Find your flavor</p>
+              <h2 id="genres-heading">Browse by Genre</h2>
+            </div>
+          </div>
+
+          <div class="genre-filters" id="genre-filters" aria-label="Game genre filter buttons"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a class="brand" href="#top" aria-label="VORTEX GAMES home">
+          <span>VORTEX</span> GAMES
+        </a>
+
+        <p>Gaming without limits. © 2026 Vortex Gaming Zone.</p>
+
+        <div class="footer-links" aria-label="Footer links">
+          <a href="#terms" aria-label="Read terms of service">Terms</a>
+          <a href="#privacy" aria-label="Read privacy policy">Privacy</a>
+          <a href="#contact" aria-label="Contact VORTEX GAMES">Contact</a>
+        </div>
+      </footer>
+    </div>
+
+    <div class="modal hidden" id="game-modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-backdrop" data-close-modal="true"></div>
+      <div class="modal-dialog" aria-labelledby="modal-title">
+        <button class="modal-close" type="button" aria-label="Close game details">✕</button>
+        <div class="modal-media" id="modal-image"></div>
+        <div class="modal-body">
+          <p class="section-kicker modal-kicker">Game details</p>
+          <h3 id="modal-title">Game title</h3>
+          <div class="modal-meta" id="modal-meta"></div>
+          <p id="modal-description"></p>
+          <div class="modal-tags" id="modal-tags"></div>
+          <div class="modal-actions">
+            <button class="primary-button modal-store-btn" type="button">Open Store</button>
+            <button class="secondary-button modal-close-btn" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
